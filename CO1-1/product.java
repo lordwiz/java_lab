@@ -11,7 +11,7 @@ public class product {
         this.pcode = scanner.nextInt();
 
         System.out.println("input product name:");
-        this.pname = scanner.nextLine();
+        this.pname = scanner.next();
 
         System.out.println("input product prize:");
         this.price = scanner.nextInt();
