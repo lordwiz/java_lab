@@ -1,79 +1,80 @@
-// Shape.java - Interface for common shape methods
-public interface Shape {
-    double getArea();
+package thomas;
+// Shape.java (Interface)
+interface Shape {
+    double calculateArea();
 }
 
-// Rectangle.java - Rectangle class implementing the Shape interface
-public class Rectangle implements Shape {
-    private double length;
+// Rectangle.java
+class Rectangle implements Shape {
     private double width;
-    
-    public Rectangle(double length, double width) {
-        this.length = length;
+    private double height;
+
+    public Rectangle(double width, double height) {
         this.width = width;
+        this.height = height;
     }
-    
+
     @Override
-    public double getArea() {
-        return length * width;
+    public double calculateArea() {
+        return width * height;
     }
 }
 
-// Triangle.java - Triangle class implementing the Shape interface
-public class Triangle implements Shape {
+// Triangle.java
+class Triangle implements Shape {
     private double base;
     private double height;
-    
+
     public Triangle(double base, double height) {
         this.base = base;
         this.height = height;
     }
-    
+
     @Override
-    public double getArea() {
+    public double calculateArea() {
         return 0.5 * base * height;
     }
 }
 
-// Square.java - Square class implementing the Shape interface
-public class Square implements Shape {
+// Square.java
+class Square implements Shape {
     private double side;
-    
+
     public Square(double side) {
         this.side = side;
     }
-    
+
     @Override
-    public double getArea() {
+    public double calculateArea() {
         return side * side;
     }
 }
 
-// Circle.java - Circle class implementing the Shape interface
-public class Circle implements Shape {
+// Circle.java
+class Circle implements Shape {
     private double radius;
-    
+
     public Circle(double radius) {
         this.radius = radius;
     }
-    
+
     @Override
-    public double getArea() {
+    public double calculateArea() {
         return Math.PI * radius * radius;
     }
 }
 
-// TestGraphicsPackage.java - Testing the graphics package
+// TestGraphicsPackage.java
 public class TestGraphicsPackage {
     public static void main(String[] args) {
         Rectangle rectangle = new Rectangle(5, 10);
-        Triangle triangle = new Triangle(6, 8);
-        Square square = new Square(4);
+        Triangle triangle = new Triangle(4, 8);
+        Square square = new Square(6);
         Circle circle = new Circle(3);
-        
-        System.out.println("Rectangle area: " + rectangle.getArea());
-        System.out.println("Triangle area: " + triangle.getArea());
-        System.out.println("Square area: " + square.getArea());
-        System.out.println("Circle area: " + circle.getArea());
+
+        System.out.println("Area of Rectangle: " + rectangle.calculateArea());
+        System.out.println("Area of Triangle: " + triangle.calculateArea());
+        System.out.println("Area of Square: " + square.calculateArea());
+        System.out.println("Area of Circle: " + circle.calculateArea());
     }
 }
